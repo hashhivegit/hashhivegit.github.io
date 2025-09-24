@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Checkout - HashHive</title><link rel="stylesheet" href="style.css"></head><body>
+<header>
+  <div class="brand">
+    <div class="logo">HH</div>
+    <div>
+      <div style="font-weight:800">HashHive</div>
+      <div class="small" style="color:var(--muted)">Envogue Apparel Ltd • Trusted Bitcoin Miner Store</div>
+    </div>
+  </div>
+  <div class="header-right">Support: +44 7577 071039 &nbsp; | &nbsp; <a href="mailto:hashhive.github@proton.me" style="color:var(--muted)">hashhive.github@proton.me</a></div>
+</header>
+<main class="container card">
+  <h2>Checkout</h2>
+  <div id="orderArea">
+    <div id="productInfo" class="card small">Loading product...</div>
+
+    <form id="checkoutForm" onsubmit="return handleSubmit(event)">
+      <label>Full name</label>
+      <input id="name" required>
+      <label>Email</label>
+      <input id="email" type="email" required>
+      <label>Shipping address</label>
+      <textarea id="address" rows="3" required></textarea>
+      <label>Shipping option</label>
+      <select id="shipping">
+        <option value="standard" data-cost="49">Standard tracked — £49</option>
+        <option value="express" data-cost="99">Express tracked — £99</option>
+      </select>
+      <div style="margin-top:12px">
+        <button class="btn" type="submit">Create Order & Get Payment Link</button>
+      </div>
+    </form>
+    <div id="payArea" style="display:none;margin-top:12px" class="card">
+      <p class="small">Order created (demo). Replace the hosted-checkout URL here with your NOWPayments / Coinbase Commerce link.</p>
+      <a id="payLink" class="btn" target="_blank" href="#">Pay with Crypto (demo)</a>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="cols">
+    <div class="col">
+      <h4>About HashHive</h4>
+      <p class="small">Manufacturer-tested miners, secure payments, and worldwide shipping. Envogue Apparel Ltd trading as HashHive.</p>
+    </div>
+    <div class="col">
+      <h4>Customer Support</h4>
+      <ul class="small">
+        <li><a href="contact.html">Contact Support</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>Legal</h4>
+      <ul class="small">
+        <li><a href="terms.html">Terms & Conditions</a></li>
+        <li><a href="refund.html">Refund Policy</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>Follow</h4>
+      <div class="small">Twitter | Telegram | YouTube</div>
+      <div style="margin-top:10px" class="small">© 2025 Envogue Apparel Ltd</div>
+    </div>
+  </div>
+</footer>
+<script>
+const products = {
+1: {id:1, name: 'HashHive Miner 1', spec: 'Example spec • 100 TH/s', price: '£399'},
+2: {id:2, name: 'HashHive Miner 2', spec: 'Example spec • 100 TH/s', price: '£499'},
+3: {id:3, name: 'HashHive Miner 3', spec: 'Example spec • 100 TH/s', price: '£599'},
+4: {id:4, name: 'HashHive Miner 4', spec: 'Example spec • 100 TH/s', price: '£699'},
+5: {id:5, name: 'HashHive Miner 5', spec: 'Example spec • 100 TH/s', price: '£799'},
+6: {id:6, name: 'HashHive Miner 6', spec: 'Example spec • 100 TH/s', price: '£899'},
+7: {id:7, name: 'HashHive Miner 7', spec: 'Example spec • 100 TH/s', price: '£999'},
+8: {id:8, name: 'HashHive Miner 8', spec: 'Example spec • 100 TH/s', price: '£1099'},
+9: {id:9, name: 'HashHive Miner 9', spec: 'Example spec • 100 TH/s', price: '£1199'},
+10: {id:10, name: 'HashHive Miner 10', spec: 'Example spec • 100 TH/s', price: '£1299'},
+};
+const params = new URLSearchParams(location.search);
+const pid = params.get('pid') || '1';
+const prod = products[pid];
+document.addEventListener('DOMContentLoaded', function(){
+  document.getElementById('productInfo').innerHTML = '<strong>'+prod.name+'</strong><br>'+prod.spec+'<br><span class="price">'+prod.price+'</span>';
+});
+function handleSubmit(e){
+  e.preventDefault();
+  document.getElementById('payArea').style.display='block';
+  const demo = 'https://nowpayments.io/';
+  document.getElementById('payLink').href = demo;
+  alert('Order created (demo). Click Pay with Crypto to open payment provider.');
+  return false;
+}
+</script>
+</body></html>

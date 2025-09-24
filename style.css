@@ -1,0 +1,26 @@
+
+/* HashHive basic styling */
+:root{--accent:#00c896;--dark:#071020;--card:#0f1720;--muted:#94a3b8}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#06101a,#071827);color:#e6eef6}
+header{background:linear-gradient(90deg,var(--dark),#0b1120);padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:56px;height:56px;background:linear-gradient(135deg,var(--accent),#7c3aed);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#002}
+.header-right{color:var(--muted);font-size:14px}
+nav a{color:var(--muted);text-decoration:none;margin-left:14px}
+.container{max-width:1100px;margin:20px auto;padding:0 16px}
+.hero{display:grid;grid-template-columns:1fr 380px;gap:20px;align-items:center;margin-top:18px}
+.card{background:rgba(255,255,255,0.03);padding:16px;border-radius:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+.product{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+.product img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+h1,h2{color:var(--accent)}
+.price{font-weight:800;margin-top:8px;color:#cbe;}
+.btn{background:var(--accent);color:#002;padding:10px 12px;border-radius:8px;display:inline-block;text-decoration:none;font-weight:700;margin-top:8px}
+.footer{background:#071021;color:var(--muted);padding:28px 16px;margin-top:26px}
+.footer .cols{display:flex;flex-wrap:wrap;gap:18px;max-width:1100px;margin:0 auto}
+.col{flex:1 1 200px}
+.col h4{color:#fff;margin-bottom:8px}
+.small{font-size:13px;color:var(--muted)}
+form input, form textarea, select{width:100%;padding:10px;border-radius:8px;border:none;background:rgba(255,255,255,0.02);color:inherit;margin-top:8px}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.header-right{font-size:13px}}

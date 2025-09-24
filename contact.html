@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Contact - HashHive</title><link rel="stylesheet" href="style.css"></head><body>
+<header>
+  <div class="brand">
+    <div class="logo">HH</div>
+    <div>
+      <div style="font-weight:800">HashHive</div>
+      <div class="small" style="color:var(--muted)">Envogue Apparel Ltd • Trusted Bitcoin Miner Store</div>
+    </div>
+  </div>
+  <div class="header-right">Support: +44 7577 071039 &nbsp; | &nbsp; <a href="mailto:hashhive.github@proton.me" style="color:var(--muted)">hashhive.github@proton.me</a></div>
+</header>
+<main class="container card">
+  <h2>Contact Support</h2>
+  <p class="small">For order support email <a href="mailto:hashhive.github@proton.me">hashhive.github@proton.me</a> or use the form below.</p>
+  <form id="contactForm" onsubmit="sendMail(event)">
+    <label>Your name</label><input id="cname" required>
+    <label>Your email</label><input id="cemail" type="email" required>
+    <label>Subject</label><input id="csubject" required>
+    <label>Message</label><textarea id="cmessage" rows="5" required></textarea>
+    <div style="margin-top:10px"><button class="btn" type="submit">Send Message</button></div>
+  </form>
+  <p class="small">We will respond within 24–48 hours.</p>
+</main>
+<footer class="footer">
+  <div class="cols">
+    <div class="col">
+      <h4>About HashHive</h4>
+      <p class="small">Manufacturer-tested miners, secure payments, and worldwide shipping. Envogue Apparel Ltd trading as HashHive.</p>
+    </div>
+    <div class="col">
+      <h4>Customer Support</h4>
+      <ul class="small">
+        <li><a href="contact.html">Contact Support</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>Legal</h4>
+      <ul class="small">
+        <li><a href="terms.html">Terms & Conditions</a></li>
+        <li><a href="refund.html">Refund Policy</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>Follow</h4>
+      <div class="small">Twitter | Telegram | YouTube</div>
+      <div style="margin-top:10px" class="small">© 2025 Envogue Apparel Ltd</div>
+    </div>
+  </div>
+</footer>
+<script>
+function sendMail(e){
+  e.preventDefault();
+  const name = document.getElementById('cname').value;
+  const email = document.getElementById('cemail').value;
+  const subject = encodeURIComponent(document.getElementById('csubject').value);
+  const message = encodeURIComponent('From: '+name+' ('+email+')\n\n'+document.getElementById('cmessage').value);
+  window.location.href = 'mailto:hashhive.github@proton.me?subject='+subject+'&body='+message;
+}
+</script>
+</body></html>
